@@ -27,10 +27,10 @@ prepare() {
 }
 
 build() {
-    arch-meson $pkgname build
-    ninja -C build
+    meson ../callaudiod-build
+    ninja -C ../callaudiod-build
 }
 
 package() {
-    DESTDIR="$pkgdir" ninja -C build install
+    DESTDIR="$pkgdir" ninja -C ../callaudiod-build install
 }
