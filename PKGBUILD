@@ -9,7 +9,7 @@ url="https://gitlab.com/mobian1/callaudiod"
 license=('GPL')
 arch=('x86_64' 'armv7h' 'aarch64')
 depends=('pulseaudio' 'alsa-lib' 'glib2')
-makedepends=('meson')
+makedepends=('meson' 'git')
 source=("git+https://gitlab.com/mobian1/${pkgname}.git#commit=${_commit}")
 md5sums=('SKIP')
 
