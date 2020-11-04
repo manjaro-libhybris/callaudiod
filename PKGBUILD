@@ -24,13 +24,15 @@ prepare() {
       msg2 "Applying patch: $src..."
       patch -Np1 < "../$src"
   done
+
+  sed -i -e 's|#include "callaudiod.h"|#include "../src/callaudiod.h"|g' libcallaudio/libcallaudio.c
 }
 
 build() {
-    meson ../callaudiod-build
-    ninja -C ../callaudiod-build
+    arch-meson $pkgname build
+    ninja -C build
 }
 
 package() {
-    DESTDIR="$pkgdir" ninja -C ../callaudiod-build install
+    DESTDIR="$pkgdir" ninja -C build install
 }
