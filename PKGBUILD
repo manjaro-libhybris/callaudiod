@@ -2,7 +2,7 @@
 
 pkgname=callaudiod
 pkgver=0.0.4
-_commit=2cd44d1925a153f58d3f0c6acad2bc77c4d37df3
+_commit=6c8ffc22cbaf68f29f9eefc27226978493f9bde2
 pkgrel=1
 pkgdesc="Call audio routing daemon"
 url="https://gitlab.com/mobian1/callaudiod"
