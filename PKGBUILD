@@ -13,6 +13,11 @@ makedepends=('meson' 'git')
 source=("git+https://gitlab.com/mobian1/${pkgname}.git#commit=${_commit}")
 md5sums=('SKIP')
 
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
 prepare() {
   cd "$srcdir/$pkgname"
 
