@@ -22,7 +22,6 @@
 build-package:
   tags:
     # change the tag to your gitlab-runner
-    - philm
     - bigbuilds
     - aarch64
   script:
