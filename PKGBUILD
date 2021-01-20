@@ -1,7 +1,7 @@
 # Maintainer: Philip Müller <philm@manjaro.org>
 
 pkgname=callaudiod
-pkgver=0.0.4
+pkgver=0.0.5
 _commit=5885e981b9acba474e277b37e3f912e61466a03e
 pkgrel=1
 pkgdesc="Call audio routing daemon"
@@ -9,7 +9,7 @@ url="https://gitlab.com/mobian1/callaudiod"
 license=('GPL')
 arch=('x86_64' 'armv7h' 'aarch64')
 depends=('pulseaudio' 'alsa-lib' 'glib2')
-makedepends=('meson')
+makedepends=('meson' 'git')
 source=("git+https://gitlab.com/mobian1/${pkgname}.git#commit=${_commit}")
 md5sums=('SKIP')
 
