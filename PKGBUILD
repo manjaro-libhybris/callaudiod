@@ -1,8 +1,8 @@
 # Maintainer: Philip Müller <philm@manjaro.org>
 
 pkgname=callaudiod
-pkgver=0.0.5
-_commit=5885e981b9acba474e277b37e3f912e61466a03e
+pkgver=0.1.0
+_commit=007b3412089467cc25a674a31c44426e5a2229af
 pkgrel=1
 pkgdesc="Call audio routing daemon"
 url="https://gitlab.com/mobian1/callaudiod"
