@@ -13,7 +13,7 @@ makedepends=('meson' 'git')
 source=("git+https://gitlab.com/mobian1/${pkgname}.git#commit=${_commit}")
 md5sums=('SKIP')
 
-_reverts(
+_reverts=(
   811e01a80d369168fc2355d01d23f0edce114b52
 )
 
