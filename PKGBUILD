@@ -17,15 +17,6 @@ _reverts=(
   811e01a80d369168fc2355d01d23f0edce114b52
 )
 
-prepare() {
-    cd $pkgname
-    
-    for _c in "${_reverts[@]}"; do
-      git log --oneline -1 "${_c}"
-      git revert -n "${_c}"
-    done
-}
-
 pkgver() {
   cd $pkgname
   git describe --tags | sed 's/^v//;s/-/+/g'
@@ -33,6 +24,11 @@ pkgver() {
 
 prepare() {
   cd "$srcdir/$pkgname"
+
+  for _c in "${_reverts[@]}"; do
+      git log --oneline -1 "${_c}"
+      git revert -n "${_c}"
+  done
 
   local src
   for src in "${source[@]}"; do
