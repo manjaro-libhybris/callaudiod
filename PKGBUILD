@@ -3,15 +3,17 @@
 pkgname=callaudiod
 pkgver=0.1.0+4+g84ed2eb
 _commit=84ed2eb164711e73d30a88d540f59ddd8bc88b45
-pkgrel=2
+pkgrel=3
 pkgdesc="Call audio routing daemon"
 url="https://gitlab.com/mobian1/callaudiod"
 license=('GPL')
 arch=('x86_64' 'armv7h' 'aarch64')
 depends=('pulseaudio' 'alsa-lib' 'glib2')
 makedepends=('meson' 'git')
-source=("git+https://gitlab.com/mobian1/${pkgname}.git#commit=${_commit}")
-md5sums=('SKIP')
+source=("git+https://gitlab.com/mobian1/${pkgname}.git#commit=${_commit}"
+        https://gitlab.com/mobian1/callaudiod/-/merge_requests/10.patch)
+md5sums=('SKIP'
+         '20b4274c2058263ee3d7a7b8e0d8bfe2')
 
 _reverts=(
   811e01a80d369168fc2355d01d23f0edce114b52
