@@ -1,8 +1,8 @@
-# Maintainer: Philip Müller <philm@manjaro.org>
+# Maintainer: Luka Panio <lukapanio@gmail.com>
 
-pkgname=callaudiod
-pkgver=0.1.1
-_commit=c9550e17e6e26802dda23c6070d100aca0cc2810
+pkgname=callaudiod-hybris
+pkgver=0.1.0
+_commit=57cfcb397a6f3e6e2603eb946871bb9ca391343f
 pkgrel=1
 pkgdesc="Call audio routing daemon"
 url="https://gitlab.com/mobian1/callaudiod"
@@ -10,18 +10,13 @@ license=('GPL')
 arch=('x86_64' 'armv7h' 'aarch64')
 depends=('pulseaudio' 'alsa-lib' 'glib2')
 makedepends=('meson' 'git')
-source=("git+https://gitlab.com/mobian1/${pkgname}.git#commit=${_commit}"
-        https://gitlab.com/mobian1/callaudiod/-/merge_requests/10.patch)
-md5sums=('SKIP'
-         '20b4274c2058263ee3d7a7b8e0d8bfe2')
+provides=('callaudiod')
+conflicts=('callaudiod')
+source=("callaudiod-hybris::git+https://github.com/droidian/callaudiod#commit=${_commit}")
+md5sums=('SKIP')
 
 _reverts=(
 )
-
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/^v//;s/-/+/g'
-}
 
 prepare() {
   cd "$srcdir/$pkgname"
